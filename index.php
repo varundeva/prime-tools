@@ -25,6 +25,9 @@ switch ($tool) {
     case 'email-security':
         $data = EmailSecurityTool::getData($domain);
         break;
+    case 'reverse-dns':
+        $data = ReverseDnsTool::getData($params);
+        break;
     default:
         $data = [
             "error" => true,

@@ -20,12 +20,30 @@ class Validator {
         }
 
         // Validate tool
-        $validTools = ['whois', 'dns', 'ssl', 'email-security'];
+        $validTools = ['whois', 'dns', 'ssl', 'email-security','reverse-dns'];
         if (!isset($params['tool']) || !in_array($params['tool'], $validTools)) {
             return [
                 "error" => true,
                 "message" => "Invalid or missing 'tool' parameter. Valid tools: whois, dns, ssl, email-security."
             ];
+        }
+            // For reverse-dns, we can allow either 'domain' or 'ip'
+        if ($params['tool'] === 'reverse-dns') {
+            if (!isset($params['domain']) && !isset($params['ip'])) {
+                return [
+                    "error" => true,
+                    "message" => "For 'reverse-dns', you must provide either 'domain' or 'ip' parameter."
+                ];
+            }
+        } else {
+            // For other tools, 'domain' is mandatory
+            if (!isset($params['domain']) ||
+                !filter_var($params['domain'], FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)) {
+                return [
+                    "error" => true,
+                    "message" => "Invalid or missing 'domain' parameter."
+                ];
+            }
         }
 
         return ["error" => false];
