@@ -14,6 +14,27 @@ The Prime Tools API provides a suite of utilities to gather essential informatio
 
 These tools work together to offer a holistic view of a domain’s technical landscape, catering to developers, sysadmins, security analysts, and researchers who need quick and reliable domain intelligence.
 
+## File and Folder Structure
+tools-crowd/
+├── .gitignore
+├── README.md
+├── config/
+│   └── Config.php
+├── core/
+│   ├── Response.php
+│   ├── Validator.php
+│   └── bootstrap.php
+├── index.php
+└── tools/
+    ├── BaseTool.php
+    ├── DnsTool.php
+    ├── DomainToIpTool.php
+    ├── EmailSecurityTool.php
+    ├── HttpTool.php
+    ├── ReverseDnsTool.php
+    ├── SslTool.php
+    └── WhoisTool.php
+
 ## Postman Collection
 
 To streamline integration and testing, we’ve provided a ready-to-import Postman collection. This collection contains all API endpoints preconfigured with request parameters and placeholders for your API key.
