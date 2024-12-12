@@ -28,6 +28,9 @@ switch ($tool) {
     case 'reverse-dns':
         $data = ReverseDnsTool::getData($params);
         break;
+    case 'domain-to-ip':
+        $data = DomainToIpTool::getData($params['domain']);
+        break;
     default:
         $data = [
             "error" => true,
