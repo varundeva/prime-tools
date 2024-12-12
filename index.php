@@ -31,6 +31,9 @@ switch ($tool) {
     case 'domain-to-ip':
         $data = DomainToIpTool::getData($params['domain']);
         break;
+    case 'http':
+        $data = HttpTool::getData($params['domain']);
+        break;
     default:
         $data = [
             "error" => true,

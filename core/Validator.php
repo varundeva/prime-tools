@@ -20,7 +20,7 @@ class Validator {
         }
 
         // Validate tool
-        $validTools = ['whois', 'dns', 'ssl', 'email-security','reverse-dns'];
+        $validTools = ['whois', 'dns', 'ssl', 'email-security','reverse-dns','domain-to-ip','http'];
         if (!isset($params['tool']) || !in_array($params['tool'], $validTools)) {
             return [
                 "error" => true,
