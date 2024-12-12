@@ -10,3 +10,4 @@ require_once __DIR__ . '/../tools/SslTool.php';
 require_once __DIR__ . '/../tools/EmailSecurityTool.php';
 require_once __DIR__ . '/../tools/ReverseDnsTool.php';
 require_once __DIR__ . '/../tools/DomainToIpTool.php';
+require_once __DIR__ . '/../tools/HttpTool.php';
