@@ -1,4 +1,9 @@
 <?php
+// Enable CORS for all domains (adjust as needed)
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); 
+header("Access-Control-Allow-Headers: x-api-key, Origin, X-Requested-With, Content-Type, Accept");
+
 require_once __DIR__ . '/core/bootstrap.php';
 
 $headers = getallheaders();
