@@ -34,8 +34,7 @@ class HttpTool extends BaseTool {
         return [
             "error" => false,
             "domain" => $domain,
-            "headers" => $headers,
-            "content" => $body
+            "headers" => $headers
         ];
     }
 
